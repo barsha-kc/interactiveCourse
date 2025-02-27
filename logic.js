@@ -32,3 +32,76 @@ themeBtn.addEventListener("click", () => {
     }
 
 })
+
+//localization
+
+const languageSelect = document.querySelector("#language-select");
+
+
+async function loadlanguage(lang) {
+    const response = await fetch("lang.json");
+    const data = await response.json();
+
+    //header
+
+    document.querySelector("header h1").innerText = data[lang].title;
+
+
+    document.getElementById("nav-home").innerText = data[lang].home;
+    document.getElementById("nav-products").innerText = data[lang].products;
+    document.getElementById("nav-about").innerText = data[lang].about;
+    document.getElementById("theme-toggle").innerText = data[lang].themeToggle;
+    document.querySelector("footer p").innerText = data[lang].footerText;
+
+
+
+    if (document.body.classList.contains("home-page")) {
+        document.querySelector(".hero h2").innerText = data[lang].welcomeMessage;
+        document.querySelector(".hero p").innerText = data[lang].description;
+        document.querySelector(".hero .btn").innerText = data[lang].shopNow;
+    }
+
+    if (document.body.classList.contains("products-page")) {
+        document.querySelector(".filters").innerText = data[lang].products;
+        document.querySelector(".card button").innerText = data[lang].addToCart;
+        
+
+
+document.querySelectorAll("[data-key='addToCart']").forEach(button => {
+    button.innerText = data[lang].addToCart;
+});
+
+
+    }
+       
+
+    if (document.body.classList.contains("about-page")) {
+        document.querySelector(".about h2").innerText = data[lang].aboutUsTitle;
+        document.querySelector(".about p").innerText = data[lang].aboutUsText;
+    }
+
+
+
+
+    localStorage.setItem("selectedLanguage", lang);
+
+}
+
+
+
+languageSelect.addEventListener("change", () => {
+    loadlanguage(languageSelect.value);
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+        let savedLang = localStorage.getItem("selectedLanguage") || "en";
+        languageSelect.value = savedLang;
+        loadlanguage(savedLang); 
+    });
+    
+    
+    
+    
+    
