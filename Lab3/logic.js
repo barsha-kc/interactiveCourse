@@ -71,7 +71,6 @@ document.querySelectorAll("[data-key='addToCart']").forEach(button => {
     button.innerText = data[lang].addToCart;
 });
 
-
     }
        
 
@@ -82,17 +81,14 @@ document.querySelectorAll("[data-key='addToCart']").forEach(button => {
 
 
 
-
     localStorage.setItem("selectedLanguage", lang);
 
 }
 
 
-
 languageSelect.addEventListener("change", () => {
     loadlanguage(languageSelect.value);
 });
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -101,7 +97,5 @@ document.addEventListener("DOMContentLoaded", () => {
         loadlanguage(savedLang); 
     });
     
-    
-    
-    
+     
     
