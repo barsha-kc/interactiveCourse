@@ -1,9 +1,12 @@
-import React from 'react'
-
-export const Education = () => {
+export const Education = ({ schools }) => {
   return (
     <div>
-        <h2>This is the Education component</h2>
+      <h2>Education</h2>
+      <ul>
+        {schools.map((school, index) => (
+          <li key={index}>{school}</li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
