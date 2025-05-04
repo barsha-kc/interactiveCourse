@@ -40,3 +40,25 @@
 .read-the-docs {
   color: #888;
 }
+
+.not-found-page {
+  text-align: center;
+  padding: 80px 20px;
+  color: #16355e;
+}
+
+.not-found-page h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.not-found-page p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.not-found-page a {
+  text-decoration: underline;
+  color: #16355e;
+  font-weight: bold;
+}
