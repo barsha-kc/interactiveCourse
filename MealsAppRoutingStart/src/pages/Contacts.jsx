@@ -1,7 +1,7 @@
 const Contacts = () => (
-  <div>
+  <div className="page-container">
     <h2>Contacts</h2>
-    <p> A, B, C</p>
+    <p> Contact us ASAP!!</p>
   </div>
 );
 

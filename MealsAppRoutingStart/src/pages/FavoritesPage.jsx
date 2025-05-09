@@ -28,7 +28,7 @@ const FavoritesPage = () => {
   };
 
   return (
-    <div>
+    <div className='page-container'>
       <h2>Your Favorites</h2>
       <Favorites favoriteMeals={favoriteMeals} removeFavorite={removeFavorite} />
     </div>

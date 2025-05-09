@@ -334,6 +334,7 @@ a {
 }
 
 .back-link {
+  padding: 4rem 2rem 2rem; 
   display: inline-block;
   margin-bottom: 1.5rem;
   color: #ff6b6b;
@@ -377,6 +378,46 @@ a {
   white-space: pre-line;
   line-height: 1.6;
 }
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #0077cc;
+}
+
+.nav-link.active {
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+.page-container {
+  width: 100vw;
+  padding: 4rem 2rem 2rem; 
+  box-sizing: border-box;
+  min-height: 100vh;
+
+
+
+}
+
+
 
 @media (max-width: 768px) {
   .meal-details {

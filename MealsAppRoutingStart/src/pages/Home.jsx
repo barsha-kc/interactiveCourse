@@ -90,7 +90,8 @@ const Home = () => {
     };
 
   return (
-    <div className="store">
+    <div className="page-container">
+  
     <Search onSearch={handleSearch}/>
     
     <Favorites 
@@ -118,6 +119,7 @@ const Home = () => {
       ))}
     </div>
   </div>
+
   )
 }
 
