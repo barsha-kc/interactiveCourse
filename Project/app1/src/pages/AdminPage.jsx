@@ -1,25 +1,12 @@
-import React, { useContext } from 'react';
-import { UserContext } from '../contexts/UserContext';
+import React from "react";
 
-function AdminPage() {
-  const { user, toggleAdmin } = useContext(UserContext);
-
+function Admin() {
   return (
-    <div style={{ padding: '2rem' }}>
-      {user.isAdmin ? (
-        <>
-          <h1>Admin Dashboard</h1>
-          <p>Welcome, Admin! </p>
-          <button onClick={toggleAdmin}>Switch to User</button>
-        </>
-      ) : (
-        <>
-          <p>Access denied. Admins only.</p>
-          <button onClick={toggleAdmin}>I am an admin</button>
-        </>
-      )}
+    <div className="page-container">
+      <h1>This is the admin page!!!</h1>
+      <p>Only visible to admins.</p>
     </div>
   );
 }
 
-export default AdminPage;
+export default Admin;

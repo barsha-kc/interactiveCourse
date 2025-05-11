@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react";
 
 export const UserContext = createContext();
 
@@ -8,7 +8,7 @@ export function UserProvider({ children }) {
   const toggleAdmin = () => {
     setUser((prevUser) => ({
       ...prevUser,
-      isAdmin: !prevUser.isAdmin
+      isAdmin: !prevUser.isAdmin,
     }));
   };
 
