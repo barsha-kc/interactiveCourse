@@ -7,6 +7,17 @@ function MoviesPage() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [favoriteIds, setFavoriteIds] = useState([]);
+
+  const toggleFavorite = (movieId) => {
+    const updatedFavorites = favoriteIds.includes(movieId)
+      ? favoriteIds.filter((id) => id !== movieId)
+      : [...favoriteIds, movieId];
+  
+    setFavoriteIds(updatedFavorites);
+  
+    localStorage.setItem('movieIds', JSON.stringify(updatedFavorites));
+  };
 
   useEffect(() => {
     async function fetchMovies() {
@@ -28,6 +39,9 @@ function MoviesPage() {
     }
 
     fetchMovies();
+    const savedFavorites = JSON.parse(localStorage.getItem('movieIds')) || [];
+  setFavoriteIds(savedFavorites);
+
   }, []);
 
   if (loading) return <p>Loading movies...</p>;
@@ -38,7 +52,11 @@ function MoviesPage() {
       <h1>Popular Movies</h1>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <MovieCard 
+          key={movie.id} 
+          movie={movie}
+          isFavorite={favoriteIds.includes(movie.id)}
+          onFavoriteToggle={toggleFavorite}/>
         ))}
       </div>
     </div>
