@@ -7,7 +7,7 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <h1 className="home-title">Welcome to Cine Vibe Check 🎬</h1>
+      <h1 className="home-title">Cine Vibe Check</h1>
       <p className="home-description">
         Discover popular movies and mark your favorites!
       </p>

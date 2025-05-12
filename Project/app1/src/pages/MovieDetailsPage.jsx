@@ -1,10 +1,12 @@
-function MoviesPage() {
-    return (
-      <div>
-        <h1>Movies</h1>
-        <p>Details of the selected movie</p>
-      </div>
-    );
-  }
-  
-  export default MoviesPage;
+import React from "react";
+import MovieDetails from "../components/MovieDetails";
+
+function MovieDetailsPage() {
+  return (
+    <div className="movie-page">
+      <MovieDetails />
+    </div>
+  );
+}
+
+export default MovieDetailsPage;

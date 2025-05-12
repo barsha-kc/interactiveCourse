@@ -16,15 +16,15 @@ const MovieCard = ({ movie, onFavoriteToggle, isFavorite }) => {
         />
       </div>
 
-      <div className="movie-body">
+    <div className="movie-body">
+      <div className="movie-title">
         <h3>{movie.title}</h3>
         <button className="fav-btn" onClick={() => onFavoriteToggle(movie.id)}>
-          <i
-            className={isFavorite ? "fas fa-heart active" : "far fa-heart"}
-          ></i>
+          <i className={isFavorite ? "fas fa-heart active" : "far fa-heart"}></i>
         </button>
       </div>
     </div>
+  </div>
   );
 };
 
