@@ -12,12 +12,16 @@ import ProfilePage from "./pages/ProfilePages";
 import ProfileSettings from "./pages/ProfileSetting";
 import Admin from "./pages/AdminPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import FavoritesPage from "./pages/FavoritesPage";
+
 
 function App() {
   return (
     <Router>
       <div>
         <Navbar />
+
+        <div className="main-content">
 
         <main>
         <Routes>
@@ -40,10 +44,13 @@ function App() {
               <Route path="settings" element={<ProfileSettings />} />
             </Route>
          <Route path="*" element={<NotFoundPage />} />
+         <Route path="/favorites" element={<FavoritesPage />} />
+
           </Routes>
         </main>
 
         <Footer />
+      </div>
       </div>
   </Router>
   );
