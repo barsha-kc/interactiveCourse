@@ -2,9 +2,9 @@ import React from "react";
 
 function Admin() {
   return (
-    <div className="page-container">
-      <h1>This is the admin page!!!</h1>
-      <p>Only visible to admins.</p>
+    <div className="admin-page">
+      <h1 className="page-title">Admin Dashboard</h1>
+      <p className="page-description">This page is only visible to administrators.</p>
     </div>
   );
 }

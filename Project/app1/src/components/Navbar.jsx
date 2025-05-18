@@ -1,26 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const handleLinkClick = () => {
+    setIsOpen(false); 
+  };
+  
   return (
     <nav className="navbar">
-      <button className="hamburger-button">&#9776;</button>
+      <button className="hamburger-button" onClick={toggleMenu}>
+        ☰
+        </button>
 
-      <div className="nav-links">
-        <Link to="/" className="navbar-link">
+        <div className={`nav-links ${isOpen ? "active" : ""}`}>
+        <NavLink to="/" className="navbar-link">
           Home
-        </Link>
-        <Link to="/movies" className="navbar-link">
+        </NavLink>
+        <NavLink to="/movies" className="navbar-link">
           Movies
-        </Link>
-        <Link to="/about" className="navbar-link">
+        </NavLink>
+        <NavLink to="/about" className="navbar-link">
           About
-        </Link>
-        <Link to="/admin" className="navbar-link">
+        </NavLink>
+        <NavLink to="/admin" className="navbar-link">
           Admin
-        </Link>
+        </NavLink>
+        <NavLink to="/favorites" className="navbar-link">
+        Favorites
+        </NavLink>
+
       </div>
     </nav>
   );

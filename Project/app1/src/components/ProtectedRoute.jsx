@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children }) => {
     if (!submitted) {
       return (
         <div className="page-container">
-          <h2>Admin Access</h2>
+          <h2 className="page-title">Admin Access</h2>
           <input
             type="password"
             placeholder="Enter admin password"
@@ -34,8 +34,8 @@ const ProtectedRoute = ({ children }) => {
     } else {
       return (
         <div className="page-container">
-          <h2>Access Denied</h2>
-          <p>Incorrect password.</p>
+          <h2 className="page-title">Access Denied</h2>
+          <p className="page-description">Incorrect password.</p>
         </div>
       );
     }

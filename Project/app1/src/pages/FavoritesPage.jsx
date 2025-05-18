@@ -38,7 +38,7 @@ function FavoritesPage() {
 
   return (
     <div className="movies-page">
-      <h1 className="movies-title">My Favorite Movies ❤️</h1>
+      <h1 className="movies-title">My Favorite Movies</h1>
 
       {loading ? (
         <p>Loading your favorites...</p>
